@@ -1,0 +1,31 @@
+model_params:
+  train_file: data/携程机票_train.csv
+  val_file: data/携程机票_val.csv
+  # 数据处理后存放的路径
+  # 记录相关schema信息的文件路径
+  record_schema: data/classify.schema
+  # 用于添加到文本前的信息的类型，可选值为：meta,schema
+  # tokenization后，目标序列的最长长度
+  max_target_length: 64
+  # 在计算损失中是否忽略与填充标签对应的标记
+  ignore_pad_token_for_loss: true
+  # tokenization后，源序列最长的长度
+  max_source_length: 768
+  # prefix 的最长长度
+  max_prefix_length: -1
+  # positive spot的比率
+  meta_positive_rate: 1.0
+  # 在训练中，Negative Schema的数量
+  meta_negative: 2
+  # 是否对spot prompt和asoc prompt进行排序
+  ordered_prompt: true
+  # null spot 噪声的比率
+  spot_noise: 0.1
+  # null asoc 噪声的比率
+  asoc_noise: 0.
+  # 标签平滑系数
+  label_smoothing_factor: 0.1
+  # 是否采用限制性解码方式
+  constraint_decoding: true
+  # 解码时，束搜索
+  num_beams: 1
